@@ -11,8 +11,8 @@ from .generators import (
 from .renderers.ascii import AsciiRenderer
 from .solvers import (
     BreadthFirstSolver,
-    DepthFirstSolver,
-    DijkstraSolver,
+    # DepthFirstSolver,
+    # DijkstraSolver,
     MazeSolution,
     SolverStats,
 )
@@ -24,11 +24,9 @@ __all__ = [
     "BinaryTreeGenerator",
     "RandomGrowthGenerator",
     "BreadthFirstSolver",
-    "DepthFirstSolver",
-    "DijkstraSolver",
-    "BruteForceSolver",
+    # "DepthFirstSolver",
+    # "DijkstraSolver",
     "MazeSolution",
     "SolverStats",
     "AsciiRenderer",
 ]
-
