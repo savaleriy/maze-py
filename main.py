@@ -14,7 +14,7 @@ from src.maze_py import (
     MazeSolution,
     MazeGrid,
     RandomGrowthGenerator,
-    SpanningTreeGenerator,   
+    SpanningTreeGenerator,
 )
 from src.maze_py.exporters import write_animation_package
 
@@ -107,6 +107,16 @@ def main() -> None:
     else:
         print(f"\n{args.solver.upper()} solver could not reach the target.")
 
+    result = solver_solutions["bfs"]
+
+    stats = result.stats
+    status = "Y" if result.found else "N"
+    print(
+        f"  {key.upper():>8} {status}  "
+        f"path={stats.path_length:3d}  "
+        f"visited={stats.nodes_expanded:4d}  "
+        f"time={stats.runtime_ms:7.2f}ms"
+    )
 
     if args.export_json and recorder:
         output_path = write_animation_package(
